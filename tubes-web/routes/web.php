@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,4 @@ Route::get('dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
 
-Route::get('produk', function () {
-    return view('produk');
-})->name('produk')->middleware('auth');
+Route::get('produk', [ProdukController::class, 'produk'])->name('produk')->middleware('auth');
