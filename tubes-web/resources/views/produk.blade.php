@@ -9,13 +9,14 @@
                 <div class="col-md-4 mb-4">
                     <div class="card bg-secondary">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $product[1] }}</h5> <!-- Product name -->
-                            <p class="card-text">Harga: {{ $product[2] }}</p> <!-- Product price -->
-                            <p class="card-text">Dikirim dari: {{ $product[3] }}</p> <!-- Product price -->
-                            <p class="card-text">Toko: {{ $product[4] }}</p> <!-- Product price -->
-                            <p class="card-text">Penilaian: {{ $product[5] }}</p> <!-- Product price -->
-                            <p class="card-text">Terjual: {{ $product[6] }}</p> <!-- Product URL -->
-                            <p class="card-text">Link Penjualan: <a href="{{ $product[7] }}">Tekan Disini</a></p> <!-- Product price -->
+                            <h5 class="card-title">{{ $product[1] }}</h5>
+                            <p class="card-text">Brand: {{ $product[2] }}</p> 
+                            <p class="card-text">Harga:{{ $product[3] }}</p> 
+                            <p class="card-text">Lokasi Toko: {{ $product[4] }}</p> 
+                            <p class="card-text">Nama Toko: {{ $product[5] }}</p> 
+                            <p class="card-text">Penilaian: {{ $product[6] }}</p> 
+                            <p class="card-text">Stok: {{ $product[7] }}</p> 
+                            <p class="card-text">Link Produk: <a href="{{ $product[8] }}">Tekan Disini</a></p> 
                         </div>
                     </div>
                 </div>
