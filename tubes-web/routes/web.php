@@ -35,3 +35,6 @@ Route::get('/produk/search', [ProdukController::class, 'search'])->name('produk.
 Route::get('wilayah', [VisualisasiController::class, 'wilayah'])->name('wilayah')->middleware('auth');
 Route::get('produkTerlaris', [VisualisasiController::class, 'produkTerlaris'])->name('produkTerlaris')->middleware('auth');
 Route::get('brandTerlaris', [VisualisasiController::class, 'brandTerlaris'])->name('brandTerlaris')->middleware('auth');
+Route::get('power_bi', function () {
+    return view('powerBI');
+});

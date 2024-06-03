@@ -22,6 +22,8 @@ class ProdukController extends Controller
 
         // Membaca baris demi baris dari file CSV
         while (($row = fgetcsv($file)) !== false) {
+            $harga = floatval($row[3]);
+            $row[3] = 'Rp ' . number_format($harga, 0, ',', '.');
             $data[] = $row;
         }
 

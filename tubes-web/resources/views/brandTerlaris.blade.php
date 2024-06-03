@@ -8,9 +8,9 @@
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Brand Terlaris</h6>
             <form method="GET" action="{{ url('/brandTerlaris') }}">
-                <label for="num_products">Number of Products to Display:</label>
+                <label for="num_products">Merk yang ditampilkan:</label>
                 <input type="number" id="num_products" name="num_products" value="{{ $numProducts }}" min="1">
-                <button type="submit">Update</button>
+                <button type="submit">Perbarui</button>
             </form>
         </div>
         <canvas id="brandChart"></canvas>
@@ -30,7 +30,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: "Total Products Sold",
+                        label: "Jumlah Produk Terjual",
                         data: data,
                         backgroundColor: "rgb(3,172,14, .7)"
                     }]

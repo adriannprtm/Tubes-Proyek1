@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class VisualisasiController extends Controller
 {
-    public function wilayah()
+    public function wilayah(Request $request)
     {
         $csvPath = public_path('produk.csv');
         $file = fopen($csvPath, 'r');
@@ -17,20 +17,29 @@ class VisualisasiController extends Controller
         $sales = [];
         while (($record = fgetcsv($file)) !== FALSE) {
             $row = array_combine($header, $record);
-            $location = $row['shop_location'];
+            $productName = $row['shop_location'];
             $productsSold = (int)$row['products_sold'];
-            if (!isset($sales[$location])) {
-                $sales[$location] = 0;
+            if (!isset($sales[$productName])) {
+                $sales[$productName] = 0;
             }
-            $sales[$location] += $productsSold;
+            $sales[$productName] += $productsSold;
         }
 
         fclose($file);
 
-        $labels = array_keys($sales);
-        $data = array_values($sales);
+        // Sort by products_sold in descending order
+        arsort($sales);
 
-        return view('wilayah', compact('labels', 'data'));
+        // Get the number of products to display from the request, default to 10
+        $numProducts = $request->input('num_products', 10);
+
+        // Get top N products
+        $topSales = array_slice($sales, 0, $numProducts, true);
+
+        $labels = array_keys($topSales);
+        $data = array_values($topSales);
+
+        return view('wilayah', compact('labels', 'data', 'numProducts'));
     }
 
     public function produkTerlaris(Request $request)

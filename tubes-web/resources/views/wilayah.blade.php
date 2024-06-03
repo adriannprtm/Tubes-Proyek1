@@ -7,16 +7,21 @@
     <div class="bg-secondary text-center rounded p-4">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Wilayah Penjualan</h6>
+            <form method="GET" action="{{ url('/wilayah') }}">
+                <label for="num_products">Wilayah yang ditampilkan:</label>
+                <input type="number" id="num_products" name="num_products" value="{{ $numProducts }}" min="1">
+                <button type="submit">Perbarui</button>
+            </form>
         </div>
-        <canvas id="salesChart"></canvas>
+        <canvas id="wilayahChart"></canvas>
     </div>
 </div>
 @endsection
 
 @section('scripts')
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var ctx1 = document.getElementById('salesChart').getContext('2d');
+            var ctx1 = document.getElementById('wilayahChart').getContext('2d');
             var labels = @json($labels);
             var data = @json($data);
 
@@ -25,7 +30,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: "Total Products Sold",
+                        label: "Jumlah Produk Terjual",
                         data: data,
                         backgroundColor: "rgb(3,172,14, .7)"
                     }]

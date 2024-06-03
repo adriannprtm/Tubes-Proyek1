@@ -10,22 +10,25 @@
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle mx-auto mb-4" src="img/adil.png" style="width: 200px; height: 200px;">
                             <h5 class="mb-1">Fadillah Akbar</h5>
-                            <p>Profession</p>
+                            <p class="mb-1">Project Manager</p>
+                            <p class="mb-1">Programmer</p>
+                            <p class="mb-1">Analis</p>
                         </div>
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle mx-auto mb-4" src="img/adrian.png" style="width: 200px; height: 200px;">
                             <h5 class="mb-1">Adrian Pratama Sasmita</h5>
-                            <p>Profession</p>
+                            <p class="mb-1">Programmer</p>
+                            <p class="mb-1">Tester</p>
                         </div>
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle mx-auto mb-4" src="img/devi.png" style="width: 200px; height: 200px;">
                             <h5 class="mb-1">Devi</h5>
-                            <p>Profession</p>
+                            <p class="mb-1">Designer</p>
                         </div>
                         <div class="testimonial-item text-center">
                             <img class="img-fluid rounded-circle mx-auto mb-4" src="img/hasbi.png" style="width: 200px; height: 200px;">
                             <h5 class="mb-1">Hasbi</h5>
-                            <p>Profession</p>
+                            <p class="mb-1">Visualisasi Power-BI</p>
                         </div>
                      </div>
                 </div>
