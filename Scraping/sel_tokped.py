@@ -1,4 +1,4 @@
-import json
+import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -95,8 +95,12 @@ while len(data_list) < 1100:
         # Jika tidak ada tombol halaman berikutnya atau jumlah entri yang diinginkan telah tercapai, hentikan loop
         break
 
-# Simpan data ke file JSON
-with open("aaa.json", "w") as json_file:
-    json.dump(data_list, json_file, indent=4)
+# Simpan data ke file CSV
+with open("scrapingTokopedia.csv", "w", newline="", encoding='utf-8') as csv_file:
+    fieldnames = ["no", "product_name", "product_price", "shop_location", "shop_name", "shop_rating", "products_sold", "product_url"]
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+    for data in data_list:
+        writer.writerow(data)
 
 driver.quit()
